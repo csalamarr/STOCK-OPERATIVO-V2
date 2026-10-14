@@ -1,0 +1,10 @@
+{
+  "name": "stock-operativo-v2",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Reporte Operativo de Stock CD Callao v2 - Netlify",
+  "type": "module",
+  "dependencies": {
+    "@netlify/blobs": "11.1.2"
+  }
+}

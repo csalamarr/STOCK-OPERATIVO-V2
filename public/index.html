@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stock Operativo CD Callao</title>
+<meta name="description" content="Reporte operativo de stock en piso — CD Callao">
+<meta name="theme-color" content="#0b1a33">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230b1a33'/><rect x='7' y='16' width='5' height='9' fill='%23f5cf0a'/><rect x='14' y='10' width='5' height='15' fill='%23f5cf0a'/><rect x='21' y='6' width='5' height='19' fill='%23f5cf0a'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brandblock">
+      <h1>REPORTE OPERATIVO DE STOCK <span class="chip-yellow">CD CALLAO</span></h1>
+      <div class="sub" id="subtitleline">Disponibilidad de producto en piso</div>
+    </div>
+    <div class="meta">
+      <span class="lbl">Última actualización</span>
+      <b id="lastupdate">—</b>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div id="loading" class="loading"><div class="spinner"></div>Cargando stock…</div>
+
+  <div id="app" style="display:none;">
+    <div class="kpis" id="kpis"></div>
+
+    <div class="panel">
+      <h2>Marcas</h2>
+      <div class="row-scroll" id="marcaRow"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Observaciones</h2>
+      <div class="row-scroll" id="obsRow"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Buscar</h2>
+      <div class="searchwrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+        <input id="searchbox" type="search" inputmode="search" placeholder="Buscar por código, descripción, marca o categoría…" autocomplete="off">
+      </div>
+      <div class="controls-line">
+        <label class="toggle"><input type="checkbox" id="includeZero"> Incluir productos sin stock (0)</label>
+        <div class="viewswitch" id="viewSwitch">
+          <button data-view="cards" class="active" type="button">Tarjetas</button>
+          <button data-view="table" type="button">Tabla</button>
+        </div>
+      </div>
+      <div class="count-line" style="margin-top:8px;">Mostrando <b id="countShown">0</b> de <b id="countTotal">0</b> productos</div>
+    </div>
+
+    <div id="cardlist"></div>
+
+    <div class="tablewrap" id="tablewrap" style="display:none;">
+      <table class="data">
+        <thead><tr id="tablehead"></tr></thead>
+        <tbody id="tablebody"></tbody>
+      </table>
+    </div>
+
+    <div class="empty" id="emptystate" style="display:none;">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+      <b>No se encontraron productos</b>
+      Prueba con otro código, descripción, marca u observación.
+    </div>
+  </div>
+
+  <div id="nodata" class="empty" style="display:none;">
+    <b>Aún no hay información publicada</b>
+    El reporte se mostrará aquí en cuanto se cargue el Excel del día.
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+<footer>Reporte generado a partir del sistema de planificación de stock · CD Callao · Creado por CSALAMAR</footer>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
